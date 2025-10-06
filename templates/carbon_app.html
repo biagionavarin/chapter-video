@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}Carbon App{% endblock %}
+
+{% block extra_css %}
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='carbon_app.css') }}">
+{% endblock %}
+
+{% block content %}
+
+  <div class="video-background">
+    <video autoplay muted loop playsinline id="bg-video">
+      <source src="{{ url_for('static', filename='media/carbonvideo.mp4') }}" type="video/mp4">
+      Il tuo browser non supporta il tag video.
+      </video>
+      <div class="video-overlay"></div>
+  </div>
+
+  <div class="carbon-app-container">
+    <h1>Carbon Footprint App</h1>
+    <p class="h3">This page is dedicated to footprint calculations on our app.</p>
+    
+<div class="features">
+      <h2>Reduce your emissions!</h2>
+  <ul>
+    <li><a href="{{ url_for('car_emission') }}"><i class="fa-solid fa-car"></i>Car Emission</a></li>
+    <li><a href="{{ url_for('electric_car_emission') }}"><i class="bi bi-ev-front-fill"></i>Electric Car Emission</a></li>
+    <li><a href="{{ url_for('bus_emission') }}"><i class="fa-solid fa-bus"></i>Bus Emission</a></li>
+    <li><a href="{{ url_for('airplane_emission') }}"><i class="bi bi-airplane-fill"></i>Airplane Emission</a></li>
+    <li><a href="{{ url_for('train_emission') }}"><i class="bi bi-train-front-fill"></i>Train Emission</a></li>
+    <li><a href="{{ url_for('electric_scooter_emission') }}"><i class="bi bi-scooter"></i>Electric Scooter Emission</a></li>
+    <li><a href="{{ url_for('bicycle_emission') }}"><i class="bi bi-bicycle"></i>bicycle Emission</a></li>
+  </ul>
+
+{% endblock %}

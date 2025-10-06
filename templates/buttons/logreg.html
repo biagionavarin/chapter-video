@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block custom_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='buttons/logreg.css') }}">
+<style>
+  /* Reset base per togliere bordi bianchi */
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .login-page {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Sfondo immagine a schermo intero */
+    background: url("{{ url_for('static', filename='images/woods.jpg') }}") no-repeat center center fixed;
+    background-size: cover;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="login-page">
+  <div class="login-container">
+      <h2>Welcome Back</h2>
+     <form class="login-form" method="post" action="/login">
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="password" name="password" placeholder="Password" required>
+          <button class="login-button" type="submit">Login</button>
+      </form>
+      <p class="h3">Don't have an account?</p>
+      <p class="register-link">
+         <a href="{{ url_for('register') }}">Register here</a>
+    </p>
+
+  </div>
+</div>
+{% endblock %}

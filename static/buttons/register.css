@@ -1,0 +1,181 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Lexend', sans-serif;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+body {
+    background: url("images/woods.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #8a958322;
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    flex-wrap: wrap;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #ddebd5;
+    font-size: clamp(1rem, 2vw, 2em);
+    font-weight: bold;
+    text-shadow: 0 0 5px #707d5b, 0 0 10px #7d936f;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ffffff;
+}
+
+.logout-button {
+    color: #a7bfe9;
+    padding: 6px 12px;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    border-radius: 6px;
+    font-weight: bold;
+    text-shadow: 0 0 4px #142976;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.register-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.register-container {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    max-width: 300px;
+    min-width: 250px;
+    box-sizing: border-box;
+}
+
+.register-container h2 {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    color: #333;
+    text-align: center;
+}
+
+.register-container input {
+    width: 100%;
+    padding: 0.7rem;
+    margin-bottom: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    font-family: 'Lexend', sans-serif;
+    box-sizing: border-box;
+}
+
+.register-container button {
+    width: 100%;
+    padding: 0.7rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    cursor: pointer;
+    font-family: 'Lexend', sans-serif;
+    transition: background 0.3s ease;
+}
+
+.register-container button:hover {
+    background-color: #45a049;
+}
+
+.register-container p {
+    margin-top: 0,7rem;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    text-align: center;
+}
+
+.register-container p a {
+    margin-top: 0,8;
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .register-container {
+        width: 75%;
+        max-width: 280px;
+        padding: 1.5rem;
+    }
+    .register-container h2 {
+        font-size: 1.2rem;
+    }
+      .navbar {
+    flex-direction: column;   
+    align-items: center;
+    height: auto;             
+    padding: 6px 0;
+  }
+  .navbar-menu {
+    flex-direction: column;   
+    gap: 5px;
+    align-items: center;
+  }
+  .logout-button {
+    position: static;        
+    transform: none;
+    font-size: clamp(0.8rem, 2vw, 1em);        
+  }
+}
+
+@media (max-width: 480px) {
+    .register-container {
+        width: 80%;
+        max-width: 260px;
+        padding: 1rem;
+    }
+    .register-container h2 {
+        font-size: 1rem;
+    }
+    .register-container input, .register-container button {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+    .register-container p {
+        font-size: 0.8rem;
+    }
+    .navbar a {
+        font-size: clamp(0.8rem, 3vw, 1.5em);
+    }
+    .logout-button {
+        font-size: clamp(0.7rem, 2.5vw, 1rem);
+        padding: 5px 10px;
+        margin-top: 5px;
+    }
+}

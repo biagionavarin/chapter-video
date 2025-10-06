@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block custom_css %}
+<!-- Google Fonts: Lexend -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+
+<!-- CSS home -->
+<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+
+<style>
+  html { scroll-behavior: smooth; }
+
+  /* Wrapper principale della prima sezione */
+  #home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: relative;
+    padding-top: 80px;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- PRIMA SEZIONE: video + content -->
+<section id="home">
+  <div class="video-background">
+    <video autoplay muted loop playsinline id="bg-video">
+      <source src="{{ url_for('static', filename='media/background.mp4') }}" type="video/mp4">
+      Il tuo browser non supporta il tag video.
+    </video>
+  </div>
+
+  <div class="content">
+    <h1>Track your footprint!</h1>
+    <p class="subtitle">THE FUTURE STARTS NOW</p>
+    <div class="button-group">
+      <a href="#meet-section" class="neon-button">Meet our team</a>
+      <a href="{{ url_for('paper') }}" class="neon-button">Paper</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECONDA SEZIONE: Meet Our Team -->
+<section id="meet-section" class="team-page">
+  <h1 class="team-title">Meet Our Team</h1>
+
+  <div class="team-intro">
+    <img src="{{ url_for('static', filename='images/together.jpeg') }}" alt="Our Team">
+    <p>Our goals/Our purpose</p>
+  </div>
+
+  <div class="team-circle">
+    <div class="team-member member1">
+      <img src="{{ url_for('static', filename='images/member1.jpeg') }}" alt="Biagio">
+      <h2>Biagio</h2>
+      <p>the italian guy</p>
+    </div>
+
+    <div class="team-member member2">
+      <img src="{{ url_for('static', filename='images/member2.jpeg') }}" alt="Charlotte">
+      <h2>Charlotte</h2>
+      <p>the german girl</p>
+    </div>
+
+    <div class="team-member member3">
+      <img src="{{ url_for('static', filename='images/member3.jpeg') }}" alt="Evann">
+      <h2>Evann</h2>
+      <p>the french guy</p>
+    </div>
+
+    <div class="team-member member4">
+      <img src="{{ url_for('static', filename='images/member4.jpeg') }}" alt="Mathilde">
+      <h2>Mathilde</h2>
+      <p>the french girl</p>
+    </div>
+
+    <div class="team-member member5">
+      <img src="{{ url_for('static', filename='images/member5.jpeg') }}" alt="Gwendoline">
+      <h2>Gwendoline</h2>
+      <p>the belgian girl</p>
+    </div>
+  </div>
+
+<!-- Barra orizzontale "Back to top" -->
+<div class="back-bar">
+  <a href="#home"><i class="bi bi-arrow-up-circle-fill"></i>Back to top<i class="bi bi-arrow-up-circle-fill"></i></a>
+</div>
+</section>
+{% endblock %}

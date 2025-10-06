@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block custom_css %}
+  <!-- link al CSS statico -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='buttons/register.css') }}">
+
+  <style>
+    .register-page {
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url("{{ url_for('static', filename='images/woods.jpg') }}") no-repeat center center fixed;
+      background-size: cover;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+
+<div class="register-page">
+  <div class="register-container">
+      <h2>Create Your Account</h2>
+      <form method="post" action="/register">
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="password" name="password" placeholder="Password" required>
+          <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+          <button type="submit">Register</button>
+      </form>
+      <p>Already have an account? <a href="{{ url_for('logreg') }}">Login here</a></p>
+  </div>
+</div>
+{% endblock %}

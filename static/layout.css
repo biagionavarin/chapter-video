@@ -1,0 +1,127 @@
+body {
+  padding-top: 80px;
+  margin: 0;
+  font-family: 'Lexend', sans-serif;
+}
+
+.navbar {
+  position: fixed;  
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #6587d09e;
+  padding: 10px 0;
+  z-index: 10;            
+  backdrop-filter: blur(5px); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+.navbar-brand {
+  position:absolute;
+  left:20px;
+  font-family: 'Lexend', sans-serif;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #dce5f5;
+  font-size: clamp(1rem, 2vw, 2em);
+  font-weight: bold;
+  text-shadow:
+    0 0 5px #5d8cb5,
+    0 0 10px #5d75b5;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ffffff;
+}
+.navbar a.active {
+  border-bottom: 2px solid #ffffff;
+  position: relative;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow:
+    0 0 5px #5d76b5,  
+    0 0 10px #5d76b5,
+    0 0 20px #5d76b5,
+    0 0 40px #5d76b5;
+  transition: all 0.3s ease;
+}
+
+.navbar a.active:hover {
+  border-bottom-color: #ecf0f7;
+  text-shadow:
+    0 0 5px #5d76b5,
+    0 0 10px #5d76b5,
+    0 0 20px #5d76b5,
+    0 0 40px #5d76b5;
+}
+
+.logreg-button {
+  position:absolute; 
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a7bfe9;
+  padding: 6px 12px;
+  font-size: clamp(0.9rem, 1.5vw, 1.2em) !important;
+  border-radius: 6px;
+  font-weight: bold;
+  text-shadow: 0 0 4px #142976;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;   
+    align-items: center;
+    height: auto;             
+    padding: 6px 0;
+  }
+
+  .navbar-menu {
+    flex-direction: column;   
+    gap: 5px;
+    align-items: center;
+  }
+
+  .logout-button {
+    position: static;        
+    transform: none;
+    font-size: clamp(0.9rem, 2vw, 0.9em);        
+  }
+
+  .logreg-button {
+    position: static;
+    transform: none;
+    font-size: clamp(0.9rem, 2vw, 0.9em);
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar a {
+    font-size: clamp(0.8rem, 3vw, 1.5em);
+  }
+  .logout-button {
+    font-size: clamp(0.7rem, 2.5vw, 1em);
+    padding: 5px 10px;
+  }
+  .logreg-button {
+    font-size: clamp(0.7rem, 2.5vw, 1em);
+    padding: 5px 10px;
+  }
+}
